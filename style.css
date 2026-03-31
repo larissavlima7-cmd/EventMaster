@@ -1,0 +1,6 @@
+/*modo escuro e modo claro */
+body.darkMode {
+    background-color: black;
+    color: white;
+} 
+
