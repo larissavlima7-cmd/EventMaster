@@ -1,6 +1,163 @@
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* --- BOTÃO DE ALTERNAR TEMA --- */
+#btnTema {
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+#btnTema:hover {
+    transform: scale(1.05);
+}
+
+/* --- FORMULÁRIO --- */
+#formCadastro {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 30px;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #3498db;
+}
+
+/* Botão Enviar dentro do Form */
+#formCadastro button[type="submit"] {
+    padding: 12px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#formCadastro button[type="submit"]:hover {
+    background-color: #219150;
+}
+
+/* --- MENSAGENS DE FEEDBACK --- */
+#mensagem {
+    font-weight: bold;
+    text-align: center;
+    min-height: 24px;
+}
+
+/* --- LISTA DE CONVIDADOS --- */
+#listaConvidados {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-convidado {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 6px solid #27ae60;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.card-convidado strong {
+    display: block;
+    color: #2c3e50;
+}
+
+.btn-remover {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.3s;
+}
+
+.btn-remover:hover {
+    background-color: #c0392b;
+}
+
 /*modo escuro e modo claro */
 body.darkMode {
     background-color: black;
     color: white;
 } 
 
+body.darkMode h1 {
+    color: #ffffff;
+}
+
+body.darkMode #formCadastro {
+    background-color: #1e1e1e;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+body.darkMode input {
+    background-color: #2c2c2c;
+    border-color: #444;
+    color: white;
+}
+
+body.darkMode .card-convidado {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+body.darkMode .card-convidado strong {
+    color: #2ecc71;
+}
+
+/* Animação simples ao aparecer o card */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
